@@ -1,0 +1,151 @@
+.text-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.main-title {
+    color: #4B0082;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #4a4a4a;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.note {
+    color: #4a4a4a;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: "lato", sans-serif;
+}
+
+.step {
+    margin-bottom: 30px;
+}
+
+.step-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.step-description {
+    color: #4B0082;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.app-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+    font-family: "lato", sans-serif;
+}
+
+.step-two-description {
+    font-family: "lato", sans-serif;
+}
+
+/* Collapsible section */
+.collapsible {
+    position: relative;
+}
+
+/* Toggle button */
+.toggle-button {
+    display: none; /* Hidden by default, will be shown on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4B0082;
+    margin-bottom: 10px;
+}
+
+/* Arrow styles */
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #4B0082;
+    transition: transform 0.3s ease;
+}
+
+.arrow.down {
+    transform: rotate(0deg);
+}
+
+.arrow.up {
+    transform: rotate(180deg);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .toggle-button {
+        display: block; /* Show on mobile screens */
+    }
+
+    /* .app-list,
+    .step-two-description {
+        display: none;
+    } */
+
+    /* .app-list.show,
+    .step-two-description.show {
+        display: block;
+   } */
+}
+
+@media (min-width: 601px) {
+    .app-list,
+    .step-two-description {
+        display: block; /* Always visible on larger screens */
+    }
+}
+
+.subtitle-two{
+    font-family: 'Urbanist', sans-serif;
+    font-size: 24px;
+    /* font-weight: 400; */
+    line-height: 1.6;
+    /* text-align: center; */
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.subtitle-two-span{
+    color: #4B0082;
+    text-align: center;
+    font-size: 20px;
+}
+
+.join-button-two{
+    background-color: #4B0082;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    font-weight: bold;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+.join-button-two:hover {
+    background-color: #4a095f;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.50); 
+}

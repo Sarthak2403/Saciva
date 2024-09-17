@@ -1,5 +1,10 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import "./Components/Hero"
+import Hero from "./Components/Hero";
+import Navbar from "./Components/Navbar";
+// import Carousel from "./Components/Carousel"
+import Texts from "./Components/Texts";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,9 +26,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* {children} */}
+        <Navbar />
+        <Hero />
+        <hr  style={{ border: 'none', borderTop: '2px solid #9146ff', width: '80%', margin: '20px auto' }}/>
+        {/* <Carousel /> */}
+        <Texts />
+        <hr  style={{ border: 'none', borderTop: '2px solid #9146ff', width: '80%', margin: '20px auto' }}/>
+
       </body>
     </html>
   );
