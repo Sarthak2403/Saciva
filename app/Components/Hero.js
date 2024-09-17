@@ -14,7 +14,7 @@ export default function Hero() {
 
   return (
     <div>
-    <div className="flex flex-col items-center text-center space-y-6 bg-white py-20">
+    <div className="flex flex-col items-center text-center space-y-6 py-20">
       <h1 className="text-6xl font-bold">SACIVA</h1>
       <section>
         <div className="hero">

@@ -193,7 +193,7 @@ export default function Texts() {
         <h2  className="subtitle-two-span">Make your choice, make a statement, Join Saciva.</h2>
       </div>
 
-      <div className="flex flex-col items-center text-center space-y-6 bg-white py-10">
+      <div className="flex flex-col items-center text-center space-y-6 py-10">
       <button className="join-button-two" onClick={handleButton}>Join the Network for Free</button>
       <p className="">*Free for a limited time, don't miss your 100% early bird discount</p>
       </div>
