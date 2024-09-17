@@ -35,7 +35,7 @@ export default function Texts() {
         <br /> "Academics and Career"
       </p>
 
-      <p className="note">
+      <p className="note" data-aos ="fade-up">
         5 steps to attain peace of mind as an international student.
       </p>
 
