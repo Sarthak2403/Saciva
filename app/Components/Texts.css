@@ -106,9 +106,9 @@
     /* .app-list,
     .step-two-description {
         display: none;
-    } */
+    }
 
-    /* .app-list.show,
+    .app-list.show,
     .step-two-description.show {
         display: block;
    } */
@@ -129,6 +129,7 @@
     /* text-align: center; */
     margin-top: 50px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .subtitle-two-span{

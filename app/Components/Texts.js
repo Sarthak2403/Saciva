@@ -1,6 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Texts.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Texts() {
   const [isAppListVisible, setAppListVisible] = useState(false);
@@ -19,11 +21,15 @@ export default function Texts() {
     alert("The button was pressed!");
   }
   
+  useEffect(() => {
+    AOS.init({ duration: 2000 }); // Initializes AOS with animation duration of 1 second
+  }, []);
+
   return (
-    <div className="text-section">
+    <div className="text-section" >
       <h1 className="main-title">Designed to make you productive</h1>
 
-      <p className="subtitle">
+      <p className="subtitle" data-aos ="fade-up">
         We've done the hard work for you so that you can focus on the most
         important things you crossed the oceans for,
         <br /> "Academics and Career"
@@ -47,7 +53,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isAppListVisible && (
-            <ol className="app-list">
+            <ol className="app-list" data-aos ="fade-up">
               <li>
                 <del>Roommate finding Apps</del> (Saciva does that!)
               </li>
@@ -91,7 +97,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepTwoDescriptionVisible && (
-            <p className="step-two-description">
+            <p className="step-two-description" data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that it took 19 days to find a house on average and the students
               stayed in a house for only 6.8 months on average. Wasting about 34
@@ -120,7 +126,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepThreeDescriptionVisible && (
-            <p className="step-two-description">
+            <p className="step-two-description" data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that only about 12% of the total survey takers found housing
               before landing and the rest have had to find housing after
@@ -148,7 +154,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepFourDescriptionVisible && (
-            <p className="step-two-description">
+            <p className="step-two-description" data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that About 64% of them felt finding roommates difficult as a
               majority of the students wanted to share their room exclusively
@@ -176,7 +182,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepFiveDescriptionVisible && (
-            <p className="step-two-description">
+            <p className="step-two-description" data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that 88% of the total survey takers have not found housing before
               arriving in the USA.

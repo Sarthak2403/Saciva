@@ -5,7 +5,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center p-4">
         <div className="text-xl font-bold">SACIVA</div>
         <div className="flex space-x-4">
-          <a href="#" className="hover:underline">Our Story</a>
+          <a href="#" className="our-story-button">Our Story</a>
           <button className="login-button">Log In</button>
         </div>
       </nav>
