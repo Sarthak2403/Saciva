@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 // import Carousel from "./Components/Carousel"
 import Texts from "./Components/Texts";
 import Roadmap from "./Components/Roadmap";
+import ContributorSection from "./Components/ContributorSection";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +38,9 @@ export default function RootLayout({ children }) {
         <Texts />
         <hr  style={{ border: 'none', borderTop: '2px solid #9146ff', width: '80%', margin: '20px auto' }}/>
         <Roadmap />
+        <ContributorSection />
+
+
 
       </body>
     </html>
