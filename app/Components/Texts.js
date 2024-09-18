@@ -201,7 +201,7 @@ export default function Texts() {
 
       <div className="flex flex-col items-center text-center space-y-6 py-10">
       <button className="join-button-two" onClick={handleButton}>Join the Network for Free</button>
-      <p className="">*Free for a limited time, don't miss your 100% early bird discount</p>
+      <p style={{ fontFamily: 'lato' }}>*Free for a limited time, don't miss your 100% early bird discount</p>
       </div>
     </div>
   );

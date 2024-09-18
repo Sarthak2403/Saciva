@@ -1,0 +1,40 @@
+.roadmap-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.roadmap-title {
+    color: #4B0082;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: Urbainist;
+}
+
+.roadmap-text h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    font-family: lato;
+}
+
+.roadmap-text li {
+    font-family: lato;
+    margin: 1rem 0;
+    font-size: 18px;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.roadmap-text li svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.roadmap-text li p {
+    margin: 0;
+}
