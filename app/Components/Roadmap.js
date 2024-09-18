@@ -4,10 +4,23 @@ import "./Roadmap.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { CircleCheckBig } from 'lucide-react';
+import { Urbanist, Lato } from '@next/font/google';
+
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  // weight: ['400', '700'],
+  variable: '--font-urbanist'
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lato'
+});
 
 export default function Roadmap() {
     return (
-      <div className="roadmap-section">
+      <div className={`${urbanist.className} roadmap-section`}>
         <h1 className="roadmap-title">Product Roadmap</h1>
         <div className="roadmap-text">
         <h2>On your phone right now:</h2>

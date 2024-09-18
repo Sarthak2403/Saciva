@@ -10,7 +10,7 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: Urbainist;
+    font-family: 'Urbanist';
 }
 
 .subtitle {
@@ -24,7 +24,7 @@
     font-size: 16px;
     text-align: center;
     margin-bottom: 30px;
-    font-family: "lato", sans-serif;
+    font-family: 'lato';
 }
 
 .step {
@@ -36,7 +36,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Urbanist';
 }
 
 .step-description {
@@ -45,18 +45,18 @@
     font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.4;
-    font-family: Urbainist;
+    font-family: 'Urbanist';
 }
 
 .app-list {
     list-style-type: decimal;
     padding-left: 20px;
     margin-bottom: 20px;
-    font-family: lato;
+    font-family: 'lato';
 }
 
 .step-two-description {
-    font-family: lato;
+    font-family: 'lato';
 }
 
 /* Collapsible section */
@@ -118,7 +118,7 @@
 }
 
 .subtitle-two{
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Urbanist';
     font-size: 24px;
     /* font-weight: 400; */
     line-height: 1.6;
@@ -132,7 +132,7 @@
     color: #4B0082;
     text-align: center;
     font-size: 20px;
-    font-family: Urbainist;
+    font-family: 'Urbanist';
 }
 
 .join-button-two{

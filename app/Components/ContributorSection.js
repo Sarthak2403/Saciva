@@ -1,11 +1,24 @@
 import React from "react";
 import "./ContributorSection.css";
+import { Urbanist, Lato } from '@next/font/google';
+
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  // weight: ['400', '700'],
+  variable: '--font-urbanist'
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lato'
+});
 
 export default function ContributorSection() {
   return (
     <section className="contributor-section">
       <div className="content-container">
-        <p className="top-text">
+        <p className={`${urbanist.className} top-text`}>
           We are You. We are international students. Visit our blog to know
           more about how our journey with Saciva started. At Saciva, we believe
           in the power of community, we appreciate your Feedback and Suggestions
@@ -15,7 +28,7 @@ export default function ContributorSection() {
           {"< Our Story >"}
         </a>
 
-        <div className="contributor-message">
+        <div className={`${urbanist.className} contributor-message`}>
           <h2>Become a part of the Saciva contributor community</h2>
           <p>
             by extending your support in making this platform more robust and
@@ -27,7 +40,7 @@ export default function ContributorSection() {
           </a>
         </div>
 
-        <p className="bottom-text">
+        <p className={`${urbanist.className} bottom-text`}>
           Help us grow by spreading the word about Saciva! Share this with your
           friends, colleagues, classmates, and roommates—especially those who
           are international students.

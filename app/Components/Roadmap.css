@@ -10,17 +10,17 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: Urbainist;
+    /* font-family: Urbainist; */
 }
 
 .roadmap-text h2 {
     font-size: 1.4rem;
     margin-top: 2rem;
-    font-family: lato;
+    font-family: Urbainist;
 }
 
 .roadmap-text li {
-    font-family: lato;
+    /* font-family: cursive; */
     margin: 1rem 0;
     font-size: 18px;
     padding: 0;

@@ -3,6 +3,19 @@ import React, { useState, useEffect } from "react";
 import "./Texts.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Urbanist, Lato } from '@next/font/google';
+
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  // weight: ['400', '700'],
+  variable: '--font-urbanist'
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lato'
+});
 
 export default function Texts() {
   const [isAppListVisible, setAppListVisible] = useState(false);
@@ -27,21 +40,22 @@ export default function Texts() {
 
   return (
     <div className="text-section" >
-      <h1 className="main-title">Designed to make you productive</h1>
+      {/* <h1 className="main-title">Designed to make you productive</h1> */}
+      <h1 className={`${urbanist.className} main-title`}>Designed to make you productive</h1>
 
-      <p className="subtitle" data-aos ="fade-up">
+      <p className={`${urbanist.className} subtitle`} data-aos ="fade-up">
         We've done the hard work for you so that you can focus on the most
         important things you crossed the oceans for,
         <br /> "Academics and Career"
       </p>
 
-      <p className="note" data-aos ="fade-up">
+      <p className={`${lato.className} note`} data-aos ="fade-up">
         5 steps to attain peace of mind as an international student.
       </p>
 
       <div className="step">
-        <h2 className="step-title">Step 1:</h2>
-        <p className="step-description">
+        <h2 className={`${urbanist.className} step-title`} >Step 1:</h2>
+        <p className={`${urbanist.className} step-description`}>
           Join the network and add Saciva to your mobile homepage, to replace
           more than 5 types of apps during your abroad journey.
         </p>
@@ -53,21 +67,21 @@ export default function Texts() {
             ></span>
           </button>
           {!isAppListVisible && (
-            <ol className="app-list" data-aos ="fade-up">
+            <ol className={`${lato.className} app-list"`} data-aos ="fade-up">
               <li>
-                <del>Roommate finding Apps</del> (Saciva does that!)
+              1.  <del>Roommate finding Apps</del> (Saciva does that!)
               </li>
               <li>
-                <del>Sublease finding apps</del> (Saciva does that!)
+              2.  <del>Sublease finding apps</del> (Saciva does that!)
               </li>
               <li>
-                <del>Marketplace apps</del> (Saciva does that!)
+              3.  <del>Marketplace apps</del> (Saciva does that!)
               </li>
               <li>
-                <del>Private messaging Apps</del> (Saciva does that!)
+              4.  <del>Private messaging Apps</del> (Saciva does that!)
               </li>
               <li>
-                <del>Social media groups</del> (for getting information from
+              5.  <del>Social media groups</del> (for getting information from
                 peers)
               </li>
               <p>
@@ -80,8 +94,8 @@ export default function Texts() {
       </div>
 
       <div className="step">
-        <h2 className="step-title">Step 2:</h2>
-        <p className="step-description">
+        <h2 className={`${urbanist.className} step-title`}>Step 2:</h2>
+        <p className={`${urbanist.className} step-description`}>
           Avoid wasting as much as 3 months of your precious time in finding a
           place to stay during your graduate degree or more for undergraduate
           degree.
@@ -97,7 +111,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepTwoDescriptionVisible && (
-            <p className="step-two-description" data-aos ="fade-up">
+            <p className={`${lato.className} step-two-description`} data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that it took 19 days to find a house on average and the students
               stayed in a house for only 6.8 months on average. Wasting about 34
@@ -110,8 +124,8 @@ export default function Texts() {
       </div>
 
       <div className="step">
-        <h2 className="step-title">Step 3:</h2>
-        <p className="step-description">
+        <h2 className={`${urbanist.className} step-title`}>Step 3:</h2>
+        <p className={`${urbanist.className} step-description`}>
           Avoid paying 100’s of dollars in temporary accommodation by not
           finding a long term place to stay before landing in the USA
         </p>
@@ -126,7 +140,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepThreeDescriptionVisible && (
-            <p className="step-two-description" data-aos ="fade-up">
+            <p className={`${lato.className} step-two-description`} data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that only about 12% of the total survey takers found housing
               before landing and the rest have had to find housing after
@@ -137,8 +151,8 @@ export default function Texts() {
       </div>
 
       <div className="step">
-        <h2 className="step-title">Step 4:</h2>
-        <p className="step-description">
+        <h2 className={`${urbanist.className} step-title`}>Step 4:</h2>
+        <p className={`${urbanist.className} step-description`}>
           Avoid the mental stress of having to deal with roommates with clashing
           preferences, moving out of the house in the middle of your busy
           semester and finding a replacement for you.
@@ -154,7 +168,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepFourDescriptionVisible && (
-            <p className="step-two-description" data-aos ="fade-up">
+            <p className={`${lato.className} step-two-description`} data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that About 64% of them felt finding roommates difficult as a
               majority of the students wanted to share their room exclusively
@@ -166,8 +180,8 @@ export default function Texts() {
       </div>
 
       <div className="step">
-        <h2 className="step-title">Step 5:</h2>
-        <p className="step-description">
+        <h2 className={`${urbanist.className} step-title`}>Step 5:</h2>
+        <p className={`${urbanist.className} step-description`}>
           Avoid paying hundreds of dollars in temporary accommodation by not
           finding a long term place to stay before landing in the USA.
         </p>
@@ -182,7 +196,7 @@ export default function Texts() {
             ></span>
           </button>
           {!isStepFiveDescriptionVisible && (
-            <p className="step-two-description" data-aos ="fade-up">
+            <p className={`${lato.className} step-two-description`} data-aos ="fade-up">
               *Our survey of hundreds of international students in the USA shows
               that 88% of the total survey takers have not found housing before
               arriving in the USA.
@@ -195,13 +209,13 @@ export default function Texts() {
         {/* <p className="subtitle-two">Join the network to avoid loosing hundreds of dollars $$$ and months of precious time.</p>
         <span className="subtitle-two-span">Make your choice, make a statement, 
         Join Saciva.</span> */}
-        <h1 className="subtitle-two">Join the network to avoid <span>losing</span> hundreds of dollars $$$ and months of precious time.</h1>
-        <h2  className="subtitle-two-span">Make your choice, make a statement, Join Saciva.</h2>
+        <h1 className={`${urbanist.className} subtitle-two`}>Join the network to avoid <span>losing</span> hundreds of dollars $$$ and months of precious time.</h1>
+        <h2  className={`${urbanist.className} subtitle-two-span`}>Make your choice, make a statement, Join Saciva.</h2>
       </div>
 
       <div className="flex flex-col items-center text-center space-y-6 py-10">
       <button className="join-button-two" onClick={handleButton}>Join the Network for Free</button>
-      <p style={{ fontFamily: 'lato' }}>*Free for a limited time, don't miss your 100% early bird discount</p>
+      <p className={`${lato.className}`}>*Free for a limited time, don't miss your 100% early bird discount</p>
       </div>
     </div>
   );
