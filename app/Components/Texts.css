@@ -10,7 +10,6 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: 'Urbanist';
 }
 
 .subtitle {
@@ -36,7 +35,6 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    font-family: 'Urbanist';
 }
 
 .step-description {
@@ -45,18 +43,12 @@
     font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.4;
-    font-family: 'Urbanist';
 }
 
 .app-list {
     list-style-type: decimal;
     padding-left: 20px;
     margin-bottom: 20px;
-    font-family: 'lato';
-}
-
-.step-two-description {
-    font-family: 'lato';
 }
 
 /* Collapsible section */
@@ -118,7 +110,6 @@
 }
 
 .subtitle-two{
-    font-family: 'Urbanist';
     font-size: 24px;
     /* font-weight: 400; */
     line-height: 1.6;
@@ -132,7 +123,6 @@
     color: #4B0082;
     text-align: center;
     font-size: 20px;
-    font-family: 'Urbanist';
 }
 
 .join-button-two{
