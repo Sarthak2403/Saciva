@@ -1,0 +1,114 @@
+.main_div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: url('https://s3-alpha-sig.figma.com/img/5eda/b191/c5dc48fca5d00ca4d9aaa40138d204a9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Z2gh8IPDqgnZtylQYVDU8mP175Qd0Uko8NNoMF-k7YK8aDn~HpE7sBM-wFfB4mw3s4zsdkWMd842OqvTGgUT-eG~l9L8-i4mEq0Fx928WZ7RZ6qLXvo6eAH-bx9CX1gF4I4KpYpmkTh~YOmUmKZ0sAvWyrdDDD3FpNm7p1LKQVNU4209zu6rmC7oVFgkPYZFNGTE0c0PNUfagvzYJ41jFCCJqjL2wNROXXdq6-cWPNnzaoFqJD3DQ-SQbuAYfmIlJHtsPaZBGHn8ih-y7kaUdlZ9wZ4~ut2NOTgpsZbtODSMl-CIYtFfOXUuaXjf~NnNc18DjGgOUwphZ-2DIYoLkQ__') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main_div-hero {
+    margin-top: 50px;
+}
+
+.prior_main-title {
+    font-size: 82px;
+    font-weight: bold;
+    color: #480B74;
+    font-weight: 500;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #480B74;
+    font-weight: 500;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.time {
+    font-size: 40px;
+}
+
+.time span {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.supportBox {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.supportBox-para{
+    color: #fff;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+}
+
+.shareButton {
+    background-color: #5E0ACC;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.shareButton:hover {
+    background-color: #4808a0;
+}
+
+
+
+@media (max-width: 768px) {
+    .main_div {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .prior_main-title {
+        font-size: 48px; /* Smaller text for mobile */
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .countdown {
+        flex-direction: column; /* Stack time elements vertically */
+        gap: 10px;
+    }
+
+    .time {
+        font-size: 28px;
+    }
+
+    .supportBox-para {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .shareButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
