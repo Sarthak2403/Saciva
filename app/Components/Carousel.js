@@ -1,278 +1,112 @@
-// "use client";
-// import Image from "next/image";
-// import React from "react";
-// import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+"use client";
+import React, { useRef } from 'react';
+import { useSwipeable } from 'react-swipeable';
+import './Carousel.css';
+import { Urbanist, Lato } from '@next/font/google';
 
-// export function AppleCardsCarouselDemo() {
-//     const cards = data.map((card, index) => (
-//       <Card key={card.src} card={card} index={index} />
-//     ));
-//     return (
-//         <div className="w-full h-full py-20">
-//           <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-//             Get to know your iSad.
-//           </h2>
-//           <Carousel items={cards} />
-//         </div>
-//       );
-//     }
-
-"use client";;
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  createContext,
-  useContext,
-} from "react";
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-  IconX,
-} from "@tabler/icons-react";
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import { useOutsideClick } from "../hooks/use-outside-click";
-
-export const CarouselContext = createContext({
-  onCardClose: () => {},
-  currentIndex: 0,
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  variable: '--font-urbanist'
 });
 
-export const Carousel = ({
-  items,
-  initialScroll = 0
-}) => {
-  const carouselRef = React.useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lato'
+});
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = initialScroll;
-      checkScrollability();
-    }
-  }, [initialScroll]);
+const cardData = [
+  {
+    title: "No More Spam",
+    description1: "Don't lose your precious time in spam-filled social media groups.",
+    description2: "Forget infinite scrolling in muted group chats with irrelevant texts.",
+    imgSrc: "https://s3-alpha-sig.figma.com/img/cd02/0042/f2a8f484e9a2a57ba44fe24e1dad6d9f?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Gk7GEZA6n9m3V1-FWHFVV4t5Cv7VxtFS3YPkhigTPEiPGpvvcyBMNCmUYPfZC7AIqbfXIISRIh3UR6jFCJ3XKOKZrVTGsuyqxFEcZHguuKYmVSotvyNmafFfG5atolZducGTUD1Cuq2XD9jjxCegn6D2RinLTwl0s6h6LO6GuzjmjJNXyawlJNMsi9bYeFNDNgj5TTguLr4iOwSTCinWeqCilFjCCDgWwrzOUti1DKjOwWWoUJtsoOZQ6AcXU9GTZedFf4or8dPxSyY3W8IQnJePRFDCtLUU8vGUvJ1mADHWftmunn0hbZJrwkD8-ERiQ06wrpbVm100l82fRKPm4Q__",
+  },
+  {
+    title: "Another Card",
+    description1: "Text related to another feature of the product.",
+    description2: "",
+    imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  },
+  // {
+  //   title: "Another Card",
+  //   description1: "Text related to another feature of the product.",
+  //   description2: "",
+  //   imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  // },
+  // {
+  //   title: "Another Card",
+  //   description1: "Text related to another feature of the product.",
+  //   description2: "",
+  //   imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  // },
+  // {
+  //   title: "Another Card",
+  //   description1: "Text related to another feature of the product.",
+  //   description2: "",
+  //   imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  // },
+];
 
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+const Carousel = () => {
+  const carouselRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const handleSwipeLeft = () => {
+    if (currentIndex < cardData.length - 1) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  const handleSwipeRight = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleSwipeLeft,
+    onSwipedRight: handleSwipeRight,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
 
-  const handleCardClose = (index) => {
+  const handleJoinButton = () =>{
+    alert("Join button was pressed");
+  }
+
+  React.useEffect(() => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
-      const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
+        left: currentIndex * carouselRef.current.offsetWidth,
+        behavior: 'smooth'
       });
-      setCurrentIndex(index);
     }
-  };
-
-  const isMobile = () => {
-    return window && window.innerWidth < 768;
-  };
+  }, [currentIndex]);
 
   return (
-    (<CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex }}>
-      <div className="relative w-full">
-        <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
-          ref={carouselRef}
-          onScroll={checkScrollability}>
-          <div
-            className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
-            )}></div>
+    <div className="main-div">
+      <h1 className={`${urbanist.className} Carousel-title`}>
+        Forget the frustrating social media groups, join Saciva
+      </h1>
 
-          <div
-            className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
-              // remove max-w-4xl if you want the carousel to span the full width of its container
-              "max-w-7xl mx-auto"
-            )}>
-            {items.map((item, index) => (
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
-                  },
-                }}
-                key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl">
-                {item}
-              </motion.div>
-            ))}
+      <div className="Carousel" ref={carouselRef} {...swipeHandlers}>
+        {cardData.map((card, index) => (
+          <div className="Carousel-card" key={index}>
+            <img src={card.imgSrc} alt={card.title} className="Carousel-icon" />
+            <h2 className={`${urbanist.className} Carousel-card-title`}>{card.title}</h2>
+            <p className={`${lato.className}`}>{card.description1}</p>
+            {card.description2 && <p className={`${lato.className}`}>{card.description2}</p>}
           </div>
-        </div>
-        <div className="flex justify-end gap-2 mr-10">
-          <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}>
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
-          </button>
-          <button
-            className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={!canScrollRight}>
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
-          </button>
-        </div>
+        ))}
       </div>
-    </CarouselContext.Provider>)
+
+      <div className="Carousel-joinText">
+        <a className={`${lato.className}`} href="#" onClick={handleJoinButton}>Join the Network for free &gt;</a>
+        <p className={`${lato.className}`}>*free for a limited time, don't miss your 100% early bird discount</p>
+      </div>
+    </div>
   );
 };
 
-export const Card = ({
-  card,
-  index,
-  layout = false
-}) => {
-  const [open, setOpen] = useState(false);
-  const containerRef = useRef(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
-
-  useEffect(() => {
-    function onKeyDown(event) {
-      if (event.key === "Escape") {
-        handleClose();
-      }
-    }
-
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
-
-  useOutsideClick(containerRef, () => handleClose());
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    onCardClose(index);
-  };
-
-  return (<>
-    <AnimatePresence>
-      {open && (
-        <div className="fixed inset-0 h-screen z-50 overflow-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0" />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            ref={containerRef}
-            layoutId={layout ? `card-${card.title}` : undefined}
-            className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative">
-            <button
-              className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
-              onClick={handleClose}>
-              <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
-            </button>
-            <motion.p
-              layoutId={layout ? `category-${card.title}` : undefined}
-              className="text-base font-medium text-black dark:text-white">
-              {card.category}
-            </motion.p>
-            <motion.p
-              layoutId={layout ? `title-${card.title}` : undefined}
-              className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white">
-              {card.title}
-            </motion.p>
-            <div className="py-10">{card.content}</div>
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
-    <motion.button
-      layoutId={layout ? `card-${card.title}` : undefined}
-      onClick={handleOpen}
-      className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10">
-      <div
-        className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-      <div className="relative z-40 p-8">
-        <motion.p
-          layoutId={layout ? `category-${card.category}` : undefined}
-          className="text-white text-sm md:text-base font-medium font-sans text-left">
-          {card.category}
-        </motion.p>
-        <motion.p
-          layoutId={layout ? `title-${card.title}` : undefined}
-          className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2">
-          {card.title}
-        </motion.p>
-      </div>
-      <BlurImage
-        src={card.src}
-        alt={card.title}
-        fill
-        className="object-cover absolute z-10 inset-0" />
-    </motion.button>
-  </>);
-};
-
-export const BlurImage = ({
-  height,
-  width,
-  src,
-  className,
-  alt,
-  ...rest
-}) => {
-  const [isLoading, setLoading] = useState(true);
-  return (
-    (<Image
-      className={cn("transition duration-300", isLoading ? "blur-sm" : "blur-0", className)}
-      onLoad={() => setLoading(false)}
-      src={src}
-      width={width}
-      height={height}
-      loading="lazy"
-      decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
-      {...rest} />)
-  );
-};
+export default Carousel;
