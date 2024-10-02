@@ -29,12 +29,9 @@ export default function ContributorSection() {
         </a>
 
         <div className={`${urbanist.className} contributor-message`}>
-          <h2>Become a part of the Saciva contributor community</h2>
-          <p>
-            by extending your support in making this platform more robust and
-            featuresome!
-          </p>
-
+          <h2>Become a part of the Saciva contributor community  by extending your support in making this platform more robust and
+          featuresome!</h2>
+          
           <a href="#" className="contributor-button">
             Become a Contributor
           </a>

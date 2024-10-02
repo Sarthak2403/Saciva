@@ -51,6 +51,7 @@
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .contributor-button:hover {
