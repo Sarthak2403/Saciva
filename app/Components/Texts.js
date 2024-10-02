@@ -209,7 +209,7 @@ export default function Texts() {
         {/* <p className="subtitle-two">Join the network to avoid loosing hundreds of dollars $$$ and months of precious time.</p>
         <span className="subtitle-two-span">Make your choice, make a statement, 
         Join Saciva.</span> */}
-        <h1 className={`${urbanist.className} subtitle-two`}>Join the network to avoid <span>losing</span> hundreds of dollars $$$ and months of precious time.</h1>
+        <h1 className={`${urbanist.className} subtitle-two`}>Join the network to avoid losing hundreds of dollars $$$ and months of precious time.</h1>
         <h2  className={`${urbanist.className} subtitle-two-span`}>Make your choice, make a statement, Join Saciva.</h2>
       </div>
 

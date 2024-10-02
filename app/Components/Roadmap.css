@@ -6,7 +6,7 @@
 
 .roadmap-title {
     color: #4B0082;
-    font-size: 24px;
+    font-size: 30px;
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
@@ -14,7 +14,7 @@
 
 .roadmap-text h2 {
     font-size: 1.4rem;
-    margin-top: 2
+    margin-top: 50px
 }
 
 .roadmap-text li {
