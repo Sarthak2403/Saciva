@@ -3,6 +3,8 @@ import React, { useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './Carousel.css';
 import { Urbanist, Lato } from '@next/font/google';
+// import Carousel from 'react-bootstrap/Carousel';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -28,24 +30,24 @@ const cardData = [
     description2: "",
     imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
   },
-  // {
-  //   title: "Another Card",
-  //   description1: "Text related to another feature of the product.",
-  //   description2: "",
-  //   imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
-  // },
-  // {
-  //   title: "Another Card",
-  //   description1: "Text related to another feature of the product.",
-  //   description2: "",
-  //   imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
-  // },
-  // {
-  //   title: "Another Card",
-  //   description1: "Text related to another feature of the product.",
-  //   description2: "",
-  //   imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
-  // },
+  {
+    title: "Another Card",
+    description1: "Text related to another feature of the product.",
+    description2: "",
+    imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  },
+  {
+    title: "Another Card",
+    description1: "Text related to another feature of the product.",
+    description2: "",
+    imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  },
+  {
+    title: "Another Card",
+    description1: "Text related to another feature of the product.",
+    description2: "",
+    imgSrc: "https://s3-alpha-sig.figma.com/img/432c/2891/4da943f66bd613509b44465ccea003b0?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wl8AyRPIV0b4dCeg-697zH8iV7p67aoHqvaPQ25pnc9qB8CDPYjujPyPBn1koNPeT1twxi7DJVLcyrrjAop3LxHZDbjxhz7KD47ub-QvODe2ekDGp8mUXntBCVgY6H2snWS2cQvExZJAqc02bWlDc9gKPQS7SnjqEmf7ZblAQrjE-USbxrCj9CmKBlzuLP0N~zvJJThUWErwJkbOQ6bb-FCu~huJgPA1KqB8d3rqUdVjs8~~So4STBtTc5IczbuD1C-QaCPfITwv-QJXSuT7y4VbjrsDBNVv8sqDstqlG2EkxPvP9xlW0bPLdP2KzG~t7wM6LkUJaTSPggMCDyp~fA__",
+  },
 ];
 
 const Carousel = () => {

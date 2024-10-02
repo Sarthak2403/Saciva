@@ -26,8 +26,8 @@
 .Carousel {
     display: flex;
     justify-content: center;
-    overflow-x: auto;
-    /* overflow: hidden; */
+    /* overflow-x: auto; */
+    overflow: auto;
     gap: 20px;
     padding: 40px 20px;
     scroll-snap-type: x mandatory;
@@ -118,12 +118,16 @@
 
     .Carousel {
         padding: 20px 10px;
+        display: -webkit-inline-box;
     }
 
     .Carousel-card {
         /* width: 80%;  */
-        width: calc(50% - 20px);
-        max-width: 200px;
+        /* width: calc(50% - 20px);
+        max-width: 200px; */
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: none;
     }
 
     .Carousel-card h2 {
