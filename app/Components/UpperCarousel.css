@@ -1,0 +1,172 @@
+.UpperCarousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.UpperCarousel-main-div {
+    /* background-color: white; */
+    /* color: white; */
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Urbanist', sans-serif;
+    overflow: visible;
+}
+
+.main-div-p {
+    color: black;
+}
+
+.UpperCarousel-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    /* border-bottom: 2px solid #4B0082; */
+    display: inline-block;
+    border-radius: 0 0 10px 10px;
+    color: black;
+}
+
+.UpperCarousel-title span {
+    color: #8e29db;
+    font-family: 'Cutive Mono', monospace;
+}
+
+.UpperCarousel {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 40px 20px;
+    scroll-snap-type: x mandatory;
+    padding: 40px 40px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.UpperCarousel::-webkit-scrollbar {
+    display: none;
+}
+
+.UpperCarousel-card {
+    flex: 0 0 auto;
+    /* width: calc(20% - 16px);  */
+    width: calc(100% - 16px);
+    margin-right: 0;
+    scroll-snap-align: start;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 5px 3px #4B0082;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.UpperCarousel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 15px 5px #AE8DC7, 0px 0px 25px 10px #8e29db;
+    border-color: #AE8DC7
+}
+
+.UpperCarousel-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #AE8DC7;
+    size: 30px;
+    font-weight: 900;
+}
+
+.UpperCarousel-card p {
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+}
+
+.UpperCarousel-icon {
+    width: 50px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 126.98px;
+    height: 126.98px;
+    top: 1588.74px;
+    left: 133.4px;
+    gap: 0px;
+    /* object-fit: contain; */
+    /* opacity: 0px; */
+}
+
+.UpperCarousel-joinText {
+    margin-top: 30px;
+}
+
+.UpperCarousel-joinText a {
+    color: #007AFF;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.UpperCarousel-joinText p {
+    font-size: 0.8rem;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .UpperCarousel-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .UpperCarousel {
+        padding: 20px 0px;
+        display: -webkit-inline-box;
+    }
+
+    .UpperCarousel-card {
+        /* width: 80%;  */
+        /* width: calc(50% - 20px);
+        max-width: 200px; */
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: none;  
+    }
+    .UpperCarousel-card:hover {
+        transform: translateY(-10px);
+        box-shadow: none;
+        border-color: #AE8DC7
+    }
+
+    .UpperCarousel-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .UpperCarousel-card p {
+        font-size: 14px;
+    }
+
+    .UpperCarousel-joinText a {
+        font-size: 1rem;
+    }
+
+    .UpperCarousel-joinText p {
+        font-size: 0.7rem;
+    }
+
+    .UpperCarousel-buttons {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .UpperCarousel-card {
+        width: calc(20% - 16px);
+        margin-right: 16px;
+    }
+}

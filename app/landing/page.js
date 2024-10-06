@@ -5,12 +5,15 @@ import Texts from '../Components/Texts';
 import Roadmap from '../Components/Roadmap';
 import ContributorSection from '../Components/ContributorSection';
 import Carousel from '../Components/Carousel';
+import UpperCarousel from '../Components/UpperCarousel';
 
 export default function LandingPage() {
   return (
     <RootLayout>
       <Navbar />
         <Hero />
+        <hr  style={{ border: 'none', borderTop: '2px solid #9146ff', width: '80%', margin: '20px auto' }}/>
+        <UpperCarousel />
         <hr  style={{ border: 'none', borderTop: '2px solid #9146ff', width: '80%', margin: '20px auto' }}/>
         <Carousel />
         <Texts />
