@@ -58,11 +58,11 @@
     margin-right: 0;
     scroll-snap-align: start;
     background-color: white;
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 20px;
     text-align: center;
-    border: 1px solid #fff;
-    box-shadow: 0px 0px 5px 3px #4B0082;
+    border: 1px solid #AE8DC7;
+    /* box-shadow: 0px 0px 5px 3px #4B0082; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
