@@ -11,6 +11,9 @@
     padding: 40px 20px;
     font-family: 'Urbanist', sans-serif;
     overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
 }
 
 .Carousel-title {
@@ -160,4 +163,8 @@
         width: calc(20% - 16px);
         margin-right: 16px;
     }
+}
+
+@viewport {
+    viewport-fit: cover;
 }
