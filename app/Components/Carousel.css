@@ -104,9 +104,8 @@
 
 
 .Carousel-joinText p {
-    font-size: 0.8rem;
     color: #ccc;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -140,7 +139,7 @@
     }
 
     .Carousel-card p {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .Carousel-joinText a {
@@ -148,7 +147,7 @@
     }
 
     .Carousel-joinText p {
-        font-size: 0.7rem;
+        font-size: 18px;
     }
 
     .Carousel-buttons {

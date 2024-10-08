@@ -113,8 +113,7 @@
 
 
 .UpperCarousel-joinText p {
-    font-size: 0.8rem;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -148,7 +147,7 @@
     }
 
     .UpperCarousel-card p {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .UpperCarousel-joinText a {
@@ -156,7 +155,7 @@
     }
 
     .UpperCarousel-joinText p {
-        font-size: 0.7rem;
+        font-size: 18px;
     }
 
     .UpperCarousel-buttons {

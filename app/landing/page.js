@@ -6,10 +6,12 @@ import Roadmap from '../Components/Roadmap';
 import ContributorSection from '../Components/ContributorSection';
 import Carousel from '../Components/Carousel';
 import UpperCarousel from '../Components/UpperCarousel';
+import "./landingpage.css";
+
 
 export default function LandingPage() {
   return (
-    <RootLayout>
+    <RootLayout className="landing-page">
       <Navbar />
         <Hero />
         <hr  style={{ border: 'none', borderTop: '2px solid #9146ff', width: '80%', margin: '20px auto' }}/>

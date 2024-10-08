@@ -1,0 +1,12 @@
+.landing-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .landing-page {
+        width: 100%;
+        max-width: 100%;
+    }
+}
